@@ -7,10 +7,14 @@ const HomeContainer = styled.div`
   gap: 20px;
   padding: 53px;
 
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    padding: 20px;
+  @media (max-width: 800px) {
+    display: block;
+    padding: 0 15px 70px 15px;
   }
+`;
+
+const GridItem = styled.div`
+  margin-top: 10px;
 `;
 
 const Title = styled.h1`
@@ -23,7 +27,7 @@ const Title = styled.h1`
   }
 `;
 
-const InfoSection = styled.div`
+const InfoSection = styled(GridItem)`
   background-color: #f4f4f4;
   padding: 20px;
   border-radius: 10px;
@@ -45,7 +49,7 @@ const InfoText = styled.p`
   line-height: 1.4;
 `;
 
-const DestaqueSection = styled.div`
+const DestaqueSection = styled(GridItem)`
   background-color: #9fcf19;
   padding: 20px;
   border-radius: 10px;

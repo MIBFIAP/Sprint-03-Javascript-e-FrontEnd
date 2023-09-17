@@ -65,8 +65,9 @@ const DropdownButton = styled.button`
 `;
 
 const DropdownMenu = styled.div`
-  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
+  display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
   position: absolute;
+  justify-content: space-around;
   top: 50px;
   left: 0;
   background-color: #9fcf19;
@@ -104,36 +105,30 @@ function Nav() {
         </Logo>
       </div>
       <div className="navlinks">
-        <NavLink to="/" isOpen={isOpen} onClick={toggleDropdown}>
+        <NavLink to="/" >
           Home
         </NavLink>
-        <NavLink to="/produtos" isOpen={isOpen} onClick={toggleDropdown}>
-          Produtos
-        </NavLink>
-        <NavLink to="/blog" isOpen={isOpen} onClick={toggleDropdown}>
+        <NavLink to="/blog" >
           Blog
         </NavLink>
-        <NavLink to="/mododianoite" isOpen={isOpen} onClick={toggleDropdown}>
+        <NavLink to="/mododianoite" >
           Modo Dia/Noite
         </NavLink>
-        <NavLink to="/login" isOpen={isOpen} onClick={toggleDropdown}>
+        <NavLink to="/login" >
           Login
         </NavLink>
         <DropdownButton onClick={toggleDropdown}>Menu</DropdownButton>
         <DropdownMenu isOpen={isOpen}>
-          <NavLink to="/" onClick={toggleDropdown}>
+          <NavLink to="/" isOpen={isOpen} onClick={toggleDropdown}>
             Home
           </NavLink>
-          <NavLink to="/produtos" onClick={toggleDropdown}>
-            Produtos
-          </NavLink>
-          <NavLink to="/blog" onClick={toggleDropdown}>
+          <NavLink to="/blog" isOpen={isOpen} onClick={toggleDropdown}>
             Blog
           </NavLink>
-          <NavLink to="/mododianoite" onClick={toggleDropdown}>
-            Modo Dia/Noite
+          <NavLink to="/mododianoite" isOpen={isOpen} onClick={toggleDropdown}>
+            Dia/Noite
           </NavLink>
-          <NavLink to="/login" onClick={toggleDropdown}>
+          <NavLink to="/login" isOpen={isOpen} onClick={toggleDropdown}>
             Login
           </NavLink>
         </DropdownMenu>

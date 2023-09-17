@@ -31,6 +31,10 @@ const Footer = styled.footer`
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
+
+  @media (max-width: 660px) {
+    margin-bottom: 50px;
+  }
 `;
 
 function Blog() {

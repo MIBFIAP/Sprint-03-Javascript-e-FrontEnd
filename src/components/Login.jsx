@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useForm, Controller } from 'react-hook-form';
 import styled from 'styled-components';
 
 const LoginContainer = styled.div`
@@ -18,6 +19,10 @@ const LoginBox = styled.div`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 40px;
   width: 300px;
+
+  @media (max-width: 660px) {
+    width: 200px;
+  }
 `;
 
 const InputField = styled.input`
@@ -44,14 +49,14 @@ const LoginButton = styled.button`
 `;
 
 function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const { handleSubmit, control, reset } = useForm();
 
-  const handleLogin = () => {
-    if (username === 'usuario123' && password === 'senha12345') {
+  const handleLogin = (formData) => {
+    if (formData.username === 'usuario123' && formData.password === 'senha12345') {
       localStorage.setItem('isLoggedIn', 'true');
       sessionStorage.setItem('isLoggedIn', 'true');
       alert('Login bem-sucedido!');
+      reset(); // Limpa o formulário após o envio
     } else {
       alert('Credenciais inválidas. Tente novamente.');
     }
@@ -61,25 +66,39 @@ function Login() {
     <LoginContainer>
       <h2>Página de Login</h2>
       <LoginBox>
-        <div>
-          <InputField
-            type="text"
-            placeholder="Nome de usuário"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div>
-          <InputField
-            type="password"
-            placeholder="Senha"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <div>
-          <LoginButton onClick={handleLogin}>Login</LoginButton>
-        </div>
+        <form onSubmit={handleSubmit(handleLogin)}>
+          <div>
+            <Controller
+              name="username"
+              control={control}
+              defaultValue=""
+              render={({ field }) => (
+                <InputField
+                  type="text"
+                  placeholder="Nome de usuário"
+                  {...field}
+                />
+              )}
+            />
+          </div>
+          <div>
+            <Controller
+              name="password"
+              control={control}
+              defaultValue=""
+              render={({ field }) => (
+                <InputField
+                  type="password"
+                  placeholder="Senha"
+                  {...field}
+                />
+              )}
+            />
+          </div>
+          <div>
+            <LoginButton type="submit">Login</LoginButton>
+          </div>
+        </form>
       </LoginBox>
     </LoginContainer>
   );
