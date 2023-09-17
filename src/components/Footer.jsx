@@ -9,7 +9,7 @@ const PageContainer = styled.div`
 const FooterContainer = styled.footer`
   background-color: #9fcf19;
   color: #fffff;
-  padding: 10px;
+  padding: 11px;
   text-align: center;
   position: absolute;
   bottom: 0;
