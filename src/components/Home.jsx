@@ -1,18 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// Estilização com Styled-components
 const HomeContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   padding: 53px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
 `;
 
 const Title = styled.h1`
   font-size: 2.5rem;
   grid-column: span 2;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 const InfoSection = styled.div`
@@ -20,6 +28,11 @@ const InfoSection = styled.div`
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+  }
 `;
 
 const InfoTitle = styled.h2`
@@ -37,13 +50,17 @@ const DestaqueSection = styled.div`
   padding: 20px;
   border-radius: 10px;
   box-shadow: -5px 5px 4px rgba(0, 0, 0, 0.1);
-  color: #fffff;
+  color: #fff;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+  }
 `;
 
 const DestaqueTitle = styled.h2`
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: #fff;
 `;
 
 const ParqueList = styled.ul`
@@ -53,7 +70,7 @@ const ParqueList = styled.ul`
 
 const ParqueItem = styled.li`
   display: flex;
-  align-items: flex-start; /* Alinhe os itens no início */
+  align-items: flex-start;
   margin-bottom: 10px;
 `;
 
@@ -63,6 +80,11 @@ const ParqueImage = styled.img`
   margin-right: 10px;
   object-fit: cover;
   border-radius: 10px;
+
+  @media (max-width: 768px) {
+    width: 100px;
+    height: 80px;
+  }
 `;
 
 function Home() {
