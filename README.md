@@ -23,15 +23,20 @@ Uma plataforma online que mapeie e promova espaços verdes urbanos pouco conheci
 - João Victor - RM551410
  
 
-## Necessario
+## Dependências/Versôes
 
+{
+  "dependencies": {
+    "mathjs": "^11.11.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.46.1",
+    "react-router-dom": "^6.16.0",
+    "styled-components": "^6.0.8"
+  }
+}
 
-1. Baixe o styled-components e o react-hook-form
-
-    npm install styled-components react-hook-form
-
-
-2. Para fazer login use as seguintes credenciais:
+# Para fazer login use as seguintes credenciais:
  
 
 - Usuário: usuario123
