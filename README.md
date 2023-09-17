@@ -31,7 +31,7 @@ Uma plataforma online que mapeie e promova espaços verdes urbanos pouco conheci
     npm install styled-components react-hook-form
 
 
-2.Para fazer login use as seguintes credenciais:
+2. Para fazer login use as seguintes credenciais:
  
 
 - Usuário: usuario123
