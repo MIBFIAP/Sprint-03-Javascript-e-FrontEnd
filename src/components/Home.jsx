@@ -1,164 +1,160 @@
-import React from 'react';
+import React, { useRef, useState } from 'react'; // Adicione o useState
 import styled from 'styled-components';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const HomeContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 53px;
-
-  @media (max-width: 800px) {
-    display: block;
-    padding: 0 15px 70px 15px;
-  }
-`;
-
-const GridItem = styled.div`
-  margin-top: 10px;
-`;
-
-const Title = styled.h1`
-  font-size: 2.5rem;
-  grid-column: span 2;
-  text-align: center;
-
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
-`;
-
-const InfoSection = styled(GridItem)`
-  background-color: #f4f4f4;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-
-  @media (max-width: 768px) {
-    margin-bottom: 10px;
-  }
-`;
-
-const InfoTitle = styled.h2`
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-`;
-
-const InfoText = styled.p`
-  font-size: 1rem;
-  line-height: 1.4;
-`;
-
-const DestaqueSection = styled(GridItem)`
-  background-color: #9fcf19;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: -5px 5px 4px rgba(0, 0, 0, 0.1);
-  color: #fff;
-  margin-bottom: 20px;
-
-  @media (max-width: 768px) {
-    margin-bottom: 10px;
-  }
-`;
-
-const DestaqueTitle = styled.h2`
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-`;
-
-const ParqueList = styled.ul`
-  list-style: none;
-  padding: 0;
-`;
-
-const ParqueItem = styled.li`
   display: flex;
-  align-items: flex-start;
-  margin-bottom: 10px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
 `;
 
-const ParqueImage = styled.img`
-  width: 150px;
-  height: 120px;
-  margin-right: 10px;
-  object-fit: cover;
+const CarouselContainer = styled.div`
+  max-width: 1600px;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+`;
 
-  @media (max-width: 768px) {
-    width: 100px;
-    height: 80px;
+const CarouselItem = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-right: 20px;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    object-fit:cover
+  }
+`;
+
+const TituloDestaque = styled.div`
+  font-size: 24px;
+  text-transform: uppercase;
+  text-align: left;
+`;
+
+const HighlightSection = styled.div`
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  max-width: 1700px; /* Ajuste a largura máxima conforme necessário */
+`;
+
+const HighlightList = styled.div`
+  display: flex;
+  transition: transform 0.3s ease;
+  transform: translateX(${props => props.scrollPosition}px);
+  width: fit-content; /* Defina a largura para ajustar ao conteúdo */
+  overflow: hidden; /* Adicione um overflow oculto para ocultar as imagens 5 e 6 */
+  gap: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+`;
+
+const HighlightItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    max-width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover
+  }
+
+  p {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+  }
+`;
+
+const ArrowButton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 40px;
+  color: #333;
+  transition: color 0.3s ease;
+  outline: none;
+
+  &:hover {
+    color: #007bff;
   }
 `;
 
 function Home() {
+  const highlightListRef = useRef(null);
+  const scrollStep = 300;
+
+  const handleScrollLeft = () => {
+    if (highlightListRef.current) {
+      highlightListRef.current.scrollLeft -= scrollStep;
+    }
+  };
+
+  const handleScrollRight = () => {
+    if (highlightListRef.current) {
+      highlightListRef.current.scrollLeft += scrollStep;
+    }
+  };
+
+  // Verificação para desativar as setas quando não há mais espaço para rolar
+  const disableScrollLeft = highlightListRef.current?.scrollLeft === 0;
+  const disableScrollRight =
+    highlightListRef.current?.scrollLeft + highlightListRef.current?.clientWidth >=
+    highlightListRef.current?.scrollWidth;
+
   return (
     <HomeContainer>
-      <Title>Bem-vindo à NaturezaDescoberta</Title>
-      <InfoSection>
-        <InfoTitle>Conecte-se com a Natureza</InfoTitle>
-        <InfoText>
-          Descubra e explore os espaços verdes escondidos em sua cidade. Desfrute de momentos de paz e conexão com a natureza no coração da vida urbana.
-        </InfoText>
-      </InfoSection>
-      <InfoSection>
-        <InfoTitle>Promova o Bem-Estar</InfoTitle>
-        <InfoText>
-          Aproveite os benefícios para a saúde mental e física que os espaços verdes oferecem. Encontre locais para atividades ao ar livre, ioga, meditação e muito mais.
-        </InfoText>
-      </InfoSection>
-      <DestaqueSection>
-        <DestaqueTitle>Parques em Destaque</DestaqueTitle>
-        <ParqueList>
-          <ParqueItem>
-            <ParqueImage src="src\assets\parque1.jpg" alt="Parque 1" />
-            <div>
-              <strong>Parque da Cachoeira Verde</strong>
-              <p>Endereço: Rua das Flores, 123, Bairro Jardim Feliz, Cidade Alegre</p>
-            </div>
-          </ParqueItem>
-          <ParqueItem>
-            <ParqueImage src="src\assets\parque2.jpg" alt="Parque 2" />
-            <div>
-              <strong>Parque das Árvores Gigantes</strong>
-              <p>Endereço: Avenida dos Pinheiros, 456, Bairro Arborizado, Cidade Sombria</p>
-            </div>
-          </ParqueItem>
-          <ParqueItem>
-            <ParqueImage src="src\assets\parque3.jpg" alt="Parque 3" />
-            <div>
-              <strong>Parque da Serenidade</strong>
-              <p>Endereço: Rua da Paz, 789, Bairro Tranquilo, Cidade Calma</p>
-            </div>
-          </ParqueItem>
-        </ParqueList>
-      </DestaqueSection>
-      <DestaqueSection>
-        <DestaqueTitle>Perto de Você</DestaqueTitle>
-        <ParqueList>
-        <ParqueItem>
-            <ParqueImage src="src\assets\parque4.jpg" alt="Parque 3" />
-            <div>
-              <strong>Parque das Borboletas Coloridas</strong>
-              <p>Endereço: Rua das Cores, 321, Bairro Encantado, Cidade Alegria</p>
-            </div>
-          </ParqueItem>
-          <ParqueItem>
-            <ParqueImage src="src\assets\parque5.jpg" alt="Parque 3" />
-            <div>
-              <strong>Parque do Lago Azul</strong>
-              <p>Endereço: Avenida das Águas, 654, Bairro Sereno, Cidade Sol</p>
-            </div>
-          </ParqueItem>
-          <ParqueItem>
-            <ParqueImage src="src\assets\parque6.jpg" alt="Parque 3" />
-            <div>
-              <strong>Parque das Estrelas Cadentes</strong>
-              <p>Endereço: Estrada do Universo, 987, Bairro Celestial, Cidade Brilhante</p>
-            </div>
-          </ParqueItem>
-        </ParqueList>
-      </DestaqueSection>
+      <CarouselContainer>
+        <Carousel showThumbs={false} showArrows={true} infiniteLoop={true} autoPlay={true} interval={5000}>
+          <CarouselItem>
+            <img src="src\assets\trilha-banner.jpg" alt="Imagem 1" />
+          </CarouselItem>
+          <CarouselItem>
+            <img src="src\assets\trilha-banner2.jpg" alt="Imagem 2" />
+          </CarouselItem>
+          <CarouselItem>
+            <img src="src\assets\trilha-banner3.jpg" alt="Imagem 3" />
+          </CarouselItem>
+        </Carousel>
+      </CarouselContainer>
+
+      <TituloDestaque><h2>Destaques</h2></TituloDestaque>
+
+      <HighlightSection>
+        {/* Desativar a seta esquerda se não houver mais espaço para rolar para a esquerda */}
+        <ArrowButton onClick={handleScrollLeft} disabled={disableScrollLeft}>
+          &#8249;
+        </ArrowButton>
+        <HighlightList ref={highlightListRef} scrollPosition={0}>
+          {/* Renderize todos os itens, mas ajuste a largura máxima para controlar o número de itens visíveis */}
+          {[1, 2, 3, 4, 5, 6].map(i => (
+            <HighlightItem key={i}>
+              <img src={`src\\assets\\parque${i}.jpg`} alt={`Destaque ${i}`} />
+              <p>Título do Destaque {i}</p>
+            </HighlightItem>
+          ))}
+        </HighlightList>
+        {/* Desativar a seta direita se não houver mais espaço para rolar para a direita */}
+        <ArrowButton onClick={handleScrollRight} disabled={disableScrollRight}>
+          &#8250;
+        </ArrowButton>
+      </HighlightSection>
     </HomeContainer>
   );
 }
