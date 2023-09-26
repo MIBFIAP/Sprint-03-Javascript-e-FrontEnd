@@ -1,0 +1,62 @@
+[{
+    "id":"1",
+    "name":"SKI MOUNTAIN PARK",
+    "endereco":"66 KM DE SÃO PAULO",
+    "image":"https://www.guiadasemana.com.br/contentFiles/image/opt_w1180h738/2018/10/FEA/58218_sky-mountain-park-assessoria.jpg"
+},
+{
+    "id":"2",
+    "name":"CACHOEIRA GRANDE",
+    "endereco":"120 KM DE SÃO PAULO",
+    "image":"https://www.guiadasemana.com.br/contentFiles/image/opt_w1180h738/2018/10/FEA/58218_lagoinha-cachoeira-grande.jpg"
+},
+{
+    "id":"3",
+    "name":"PARQUE DE AVENTURA MONJOLINHO",
+    "endereco":"130 KM DE SÃO PAULO",
+    "image":"https://www.guiadasemana.com.br/contentFiles/image/opt_w1180h738/2018/10/FEA/58218_tirolesa-natureza.jpg"
+},
+{
+    "id":"4",
+    "name":"GRUTA DO ANJO",
+    "endereco":"130 KM DE SÃO PAULO",
+    "image":"https://www.guiadasemana.com.br/contentFiles/image/opt_w1180h738/2018/10/FEA/58218_socorro-gruta-do-anjo.jpg"
+},
+{
+    "id":"5",
+    "name":"PEDRA BELA",
+    "endereco":"140 KM DE SÃO PAULO",
+    "image":"https://www.guiadasemana.com.br/contentFiles/image/opt_w1180h738/2018/10/FEA/58218_tirolesa-na-natureza.jpg"
+},
+{
+    "id":"6",
+    "name":"FAZENDA RADICAL",
+    "endereco":"164 KM DE SÃO PAULO",
+    "image":"https://www.guiadasemana.com.br/contentFiles/image/opt_w1180h738/2018/10/FEA/58218_quadriciclo-casal.jpg"
+},
+{
+    "id":"7",
+    "name":"TRILHA DO BONETE",
+    "endereco":"209 KM DE SÃO PAULO",
+    "image":"https://www.guiadasemana.com.br/contentFiles/image/opt_w1180h738/2018/10/FEA/58218_bonete-ilhabela-2.jpg"
+},
+{
+    "id":"8",
+    "name":"TRILHA DAS PRAIAS DESERTAS",
+    "endereco":"246 KM DE SÃO PAULO",
+    "image":"https://www.guiadasemana.com.br/contentFiles/image/opt_w1180h738/2018/10/FEA/58218_trilha-ubatuba.jpg"
+},
+{
+    "id":"9",
+    "name":"CACHOEIRA DO SALTÃO",
+    "endereco":"250 KM DE SÃO PAULO",
+    "image":"https://www.guiadasemana.com.br/contentFiles/image/opt_w1180h738/2018/10/FEA/58218_cachoeira-do-saltao-fake.jpg"
+},
+{
+    "id":"10",
+    "name":"CAVERNA MORRO PRETO",
+    "endereco":"320 KM DE SÃO PAULO",
+    "image":"https://www.guiadasemana.com.br/contentFiles/image/opt_w1180h738/2018/10/FEA/58218_petar-caverna-morro-preto.jpg"
+}
+
+]

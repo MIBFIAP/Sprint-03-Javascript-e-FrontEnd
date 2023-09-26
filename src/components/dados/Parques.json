@@ -1,0 +1,37 @@
+[{
+    "id": "1",
+    "name": "Jardim Botanico",
+    "endereco": "Rua 1",
+    "image": "https://a.cdn-hotels.com/gdcs/production151/d951/56c798b5-08db-4703-8c49-09131fb92bbc.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
+ },
+ {
+    "id": "2",
+    "name": "Parque Burle Marx",
+    "endereco": "Rua 2",
+    "image": "https://a.cdn-hotels.com/gdcs/production20/d766/c967274c-3320-4f06-9e7a-5c79121e532c.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
+ },
+ {
+    "id": "3",
+    "name": "Parque da Água Branca",
+    "endereco": "Rua 3",
+    "image": "https://a.cdn-hotels.com/gdcs/production139/d96/bbdad3cd-8af3-4a20-a8c9-f3a2f7d3ec04.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
+ },
+ {
+    "id": "4",
+    "name": "Parque Estadual da Cantareira",
+    "endereco": "Rua 4",
+    "image": "https://a.cdn-hotels.com/gdcs/production42/d1052/0d71cbf3-94be-4a66-b73f-3726aefcfb7b.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
+ },
+ {
+    "id": "5",
+    "name": "Parque Ibirapuera",
+    "endereco": "Rua 5",
+    "image": "https://a.cdn-hotels.com/gdcs/production41/d1254/e972b0d1-c526-4b2d-aefa-b83f885bff8b.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
+ },
+ {
+    "id": "6",
+    "name": "Parque Vila Lobo",
+    "endereco": "Rua 6",
+    "image": "https://a.cdn-hotels.com/gdcs/production24/d1298/b8b71a4a-9945-4974-bbd5-05f851f1e91b.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
+ }
+]
