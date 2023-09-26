@@ -29,8 +29,13 @@ const NavLinksContainer = styled.div`
   flex: 2; /* Ocupa dois terços do espaço disponível */
   gap: 120px;
 
-  @media (max-width: 1400px) {
+  @media (max-width: 1300px) {
     gap: 50px;
+  }
+
+  @media (max-width: 1000px) {
+    justify-content: space-between;
+    gap: 15px;
   }
 `;
 
@@ -46,7 +51,7 @@ const NavLink = styled(Link)`
     transform: translateY(-3px);
   }
 
-  @media (max-width: 660px) {
+  @media (max-width: 960px) {
     display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
     margin: 10px 0; /* Espaçamento para melhorar a legibilidade */
     flex-direction: column-reverse;
@@ -63,9 +68,8 @@ const InputField = styled.input`
   background-color: #9fcf19;
   transition: background-color 0.3s ease;
 
-  &:hover {
-    background-color: #7ca50d;
-    color: #ffffff;
+  @media (max-width: 1200px) { /* Adiciona esta regra de mídia */
+    display: none; /* Define o estilo para 'none' quando a largura da tela for menor ou igual a 1000px */
   }
 `;
 
@@ -78,7 +82,6 @@ const CascadingMenu = styled.div`
   flex-direction: column;
   margin-top: 10px;
   background-color: #9fcf19;
-  border-radius: 20px;
   border: 1px solid #000;
   margin-top: 30px;
   z-index: 1;
@@ -92,7 +95,6 @@ const CascadingNavLink = styled(Link)`
   max-width: 100px;
   padding: 10px;
   transition: all 0.4s ease 0s;
-  border-radius: 10px;
 
   &:hover {
     color: #1c3300;
@@ -119,7 +121,7 @@ const DropdownButton = styled.button`
   font-size: 16px;
   padding: 10px;
   background-color: #9fcf19;
-  border: 1px solid #fff;
+  border: 1px solid #000000;
   border-radius: 4px;
   transition: background-color 0.3s;
   display: none;
@@ -128,7 +130,7 @@ const DropdownButton = styled.button`
     background-color: #7ca50d;
   }
 
-  @media (max-width: 660px) {
+  @media (max-width: 960px) {
     display: block;
   }
 `;
@@ -154,7 +156,7 @@ function Nav() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 660) {
+      if (window.innerWidth <= 960) {
         setIsOpen(false);
       }
     };
