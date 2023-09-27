@@ -4,6 +4,7 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import data from './dados/Aventuras.json';
 import data2 from './dados/Parques.json';
+import Publication from './Publication';
 
 const HomeContainer = styled.div`
   display: flex;
@@ -101,7 +102,6 @@ const Produto = styled.div`
 `;
 
 function Home() {
-  const centerSlidePercentage = window.innerWidth < 660 ? 50 : 20;
 
   return (
     <HomeContainer>
@@ -174,6 +174,10 @@ function Home() {
         ))}
       </Carousel>
       </ProdutosCarousel>
+
+      <TituloDestaque><h2>Publicações</h2></TituloDestaque>
+
+      <Publication></Publication>
 
     </HomeContainer>
   );

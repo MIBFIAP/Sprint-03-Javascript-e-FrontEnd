@@ -68,7 +68,7 @@ const InputField = styled.input`
   background-color: #9fcf19;
   transition: background-color 0.3s ease;
 
-  @media (max-width: 1200px) { /* Adiciona esta regra de mídia */
+  @media (max-width: 1500px) { /* Adiciona esta regra de mídia */
     display: none; /* Define o estilo para 'none' quando a largura da tela for menor ou igual a 1000px */
   }
 `;
