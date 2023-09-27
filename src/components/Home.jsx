@@ -23,6 +23,10 @@ const CarouselContainer = styled.div`
   @media (max-width: 1400px) {
     max-width: 1200px;
   }
+
+  @media (max-width: 850px) {
+    max-width: 800px;
+  }
   
 `;
 
@@ -44,6 +48,7 @@ const CarouselItem = styled.div`
 
   @media (max-width: 1400px) {
     height: 400px;
+    max-width: 100%;
   }
 `;
 
@@ -67,7 +72,7 @@ const ProdutosCarousel = styled.div`
     max-width: 800px; /* Nova largura para 960px */
   }
 
-  @media (max-width: 660px) {
+  @media (max-width: 830px) {
     max-width: 90%; /* Nova largura para 660px */
     margin: 0; /* Remover margem horizontal */
   }

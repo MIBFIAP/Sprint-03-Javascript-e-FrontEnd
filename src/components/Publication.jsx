@@ -4,7 +4,13 @@ import styled from "styled-components";
 const Container = styled.div`
   display: flex;
   gap: 100px;
+
+  @media (max-width: 1600px) {
+    flex-direction: column;
+    gap: 0px;
+  }
 `;
+
 const PublicationContainer = styled.div`
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -13,7 +19,7 @@ const PublicationContainer = styled.div`
   padding: 15px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 300px;
+  margin-bottom: 50px;
   margin-top: 50px;
 `;
 
@@ -42,24 +48,41 @@ const ProfileName = styled.h2`
   margin: 0;
   font-size: 1.2rem;
   color: #333;
+
+  @media (max-width: 660px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const ProfileDescription = styled.p`
   font-size: 0.8rem;
   color: #777;
   margin-top: 5px;
+
+  @media (max-width: 660px) {
+    display: none;
+  }
 `;
 
 const PhotoDescription = styled.p`
   font-size: 1.2rem;
   color: #777;
   margin-top: 30px;
+
+  @media (max-width: 660px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const PostTitle = styled.h3`
   margin: 15px 50px;
   font-size: 1.5rem;
   color: #333;
+
+  @media (max-width: 660px) {
+    font-size: 1rem;
+    margin-left: 40px;
+  }
 `;
 
 const ImageGrid = styled.div`
