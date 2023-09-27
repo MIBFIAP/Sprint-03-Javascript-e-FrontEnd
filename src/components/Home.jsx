@@ -57,12 +57,17 @@ const TituloDestaque = styled.div`
   text-transform: uppercase;
   margin-top: 30px;
   color: #008000; /* Aplicar a cor diretamente ao componente TituloDestaque */
+
+  @media (max-width: 660px) {
+    font-size: 14px;
+  }
 `;
 
 const ProdutosCarousel = styled.div`
   padding: 10px;
   border-radius: 10px;
   max-width: 90%;
+  gap: 300px;
 
   @media (max-width: 1400px) {
     max-width: 1200px;
@@ -76,6 +81,7 @@ const ProdutosCarousel = styled.div`
     max-width: 90%; /* Nova largura para 660px */
     margin: 0; /* Remover margem horizontal */
   }
+
 `;
 
 const Produto = styled.div`
@@ -97,11 +103,11 @@ const Produto = styled.div`
   @media (max-width: 660px) {
     /* Adicionar regras de estilo específicas para 660px */
     h3 {
-      font-size: 16px; /* Reduza o tamanho da fonte para o título */
+      font-size: 10px; /* Reduza o tamanho da fonte para o título */
     }
 
     p {
-      font-size: 14px; /* Reduza o tamanho da fonte para o texto */
+      font-size: 10px; /* Reduza o tamanho da fonte para o texto */
     }
   }
 `;

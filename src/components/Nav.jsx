@@ -10,6 +10,10 @@ const NavContainer = styled.nav`
   color: #fff;
   padding: 15px;
   margin: 0;
+
+  @media (max-width: 450px) {
+    display: block;
+  }
 `;
 
 const Logo = styled.h1`
@@ -36,6 +40,10 @@ const NavLinksContainer = styled.div`
   @media (max-width: 1000px) {
     justify-content: space-between;
     gap: 15px;
+  }
+
+  @media (max-width: 450px) {
+    margin-top: -31px;
   }
 `;
 
@@ -145,6 +153,14 @@ const DropdownMenu = styled.div`
   width: 100%;
   border-radius: 4px;
   z-index: 1;
+  flex-direction: column;
+  margin-top: 15px;
+
+  a {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
 `;
 
 function Nav() {
@@ -210,11 +226,17 @@ function Nav() {
           <NavLink to="/" isOpen={isOpen} onClick={toggleDropdown}>
             Home
           </NavLink>
-          <NavLink to="/blog" isOpen={isOpen} onClick={toggleDropdown}>
-            Blog
+          <NavLink to="/parque" isOpen={isOpen} onClick={toggleDropdown}>
+            Parque
           </NavLink>
-          <NavLink to="/mododianoite" isOpen={isOpen} onClick={toggleDropdown}>
-            Dia/Noite
+          <NavLink to="/aventura" isOpen={isOpen} onClick={toggleDropdown}>
+            Aventura
+          </NavLink>
+          <NavLink to="/eventos" isOpen={isOpen} onClick={toggleDropdown}>
+            Eventos
+          </NavLink>
+          <NavLink to="compartilhe" isOpen={isOpen} onClick={toggleDropdown}>
+            Compartilhe
           </NavLink>
           <NavLink to="/login" isOpen={isOpen} onClick={toggleDropdown}>
             Login
